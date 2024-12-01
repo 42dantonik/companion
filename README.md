@@ -20,4 +20,6 @@ It creates the MainWindow class. This creates the navbar widget and the central 
 │   └── app_state.py
 
 ## Adding Modules
-If you want to add another page add it to modules_config with the name (will be shown in the navbar) and the class.
+Create a new file with modules/<name>_module.py as the entry point for the new module.
+If the module needs multiple files create a folder for it (modules/<name>/). Create an __init__.py file.
+Import the class in main_window.py (e.g. "from modules.home_module import HomeModule") and add it to modules_config with the name (will be shown in the navbar) and the class (e.g. HomeModule).
