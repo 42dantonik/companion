@@ -6,6 +6,7 @@ from PyQt6.QtGui import QKeyEvent
 
 from data.themes import Themes
 from modules.home_module import HomeModule
+from modules.talea_module import TaleaModule
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -53,17 +54,19 @@ class MainWindow(QMainWindow):
         """Define the list of modules and their labels."""
         return [
             ("Home", HomeModule),
+            ("Talea", TaleaModule),
         ]
 
     def add_modules(self):
         """Dynamically add modules to the stack."""
-        self.modules = {}
+        #self.modules = {} #what for?
         for label, module_class in self.modules_config():
-            module_instance = (
-                module_class() if hasattr(module_class, "__init__") else module_class()
-            )
+            #module_instance = (
+            #    module_class() if hasattr(module_class, "__init__") else module_class() # why??
+            #)
+            module_instance = module_class()
             self.stack.addWidget(module_instance)
-            self.modules[label] = module_instance
+            #self.modules[label] = module_instance
 
     def switch_module(self, index):
         """Switch module in the stacked widget."""
