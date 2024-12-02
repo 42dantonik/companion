@@ -7,6 +7,7 @@ from PyQt6.QtGui import QKeyEvent
 from data.themes import Themes
 from modules.home_module import HomeModule
 from modules.talea_module import TaleaModule
+from modules.diary.diary_module import DiaryModule
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -55,6 +56,7 @@ class MainWindow(QMainWindow):
         return [
             ("Home", HomeModule),
             ("Talea", TaleaModule),
+            ("Diary", DiaryModule),
         ]
 
     def add_modules(self):
